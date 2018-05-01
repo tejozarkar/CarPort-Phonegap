@@ -195,7 +195,9 @@
       font-size: 20px;
       border: none;
       border-radius: 0px;
-      background: #268ef0; }
+      background: #b85b03; }
+    .location-container form button:hover {
+      background: #773b02; }
 
 #map-canvas {
   width: 100vw;

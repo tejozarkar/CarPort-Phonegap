@@ -11,17 +11,16 @@ var markers;
 
 function onSuccess(position) {
     var lat = position.coords.latitude;
-    var lang = position.coords.longitude;
+    var lng = position.coords.longitude;
 
     //  console.log(google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(42.3601, -71.0589), new google.maps.LatLng(42.3611, -71.0589)) * 0.001);
 
-    //Google Maps
-
     var mapOptions = {
         zoom: 16,
-        center: { lat: 42.3601, lng: -71.0589 }
+        center: { lat: lat, lng: lng }
     }
     map = new this.google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
 
     axios.get('http://carport.xrobotics.io/getMarkers.php')
         .then(function(response) {
@@ -42,6 +41,10 @@ function onSuccess(position) {
             console.log(error);
         });
 
+    google.maps.event.addListener(map, 'click', function(event) {
+        $('.panel').hide();
+    });
+
 }
 var markerIcon = {
     url: 'parking.png',
@@ -51,25 +54,25 @@ var markerIcon = {
     labelOrigin: new this.google.maps.Point(45, 32)
 };
 
+
+
 function addMarker(props, i) {
 
     var marker = new google.maps.Marker({
         position: props.coords,
         map: map,
-
         // label: {
         //     text: '1/50',
         //     color: "#20E8A9",
         //     fontSize: "16px",
         //     fontWeight: "bold",
-
         // },
         tag: i,
         icon: markerIcon
     });
     marker.set("id", i);
     marker.addListener('click', function() {
-        $('.panel').toggle();
+        $('.panel').show();
         var index = marker.tag;
         console.log(markers[index]);
         $('.panel p').html(markers[i].name);

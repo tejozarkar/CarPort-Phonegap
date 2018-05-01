@@ -18,7 +18,7 @@ var lat = 0,
 
 function onSuccess(position) {
     var lat = position.coords.latitude;
-    var lang = position.coords.longitude;
+    var lng = position.coords.longitude;
 
     //  console.log(google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(42.3601, -71.0589), new google.maps.LatLng(42.3611, -71.0589)) * 0.001);
 
@@ -26,7 +26,7 @@ function onSuccess(position) {
 
     var mapOptions = {
         zoom: 16,
-        center: { lat: 42.3601, lng: -71.0589 }
+        center: { lat: lat, lng: lng }
     }
     map = new this.google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
