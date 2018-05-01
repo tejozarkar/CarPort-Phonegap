@@ -1,0 +1,39 @@
+.register-background {
+    width: 100vw;
+    height: 100vh;
+    background: url('../img/life.jpg');
+    background-size: cover;
+    .register-content {
+        width: 100%;
+        height: 100%;
+        background: rgba(68, 68, 68, 0.63);
+        @extend %flex-box;
+        h1 {
+            color: white;
+            font-size: 8vw;
+            margin-bottom: 15px;
+        }
+        form {
+            width: 80%;
+            input {
+                margin-bottom: 20px;
+            }
+            button,
+            a {
+                margin-top: 20px;
+                width: 100%;
+            }
+            button {
+                background: rgb(0, 140, 255);
+                border: rgb(0, 140, 255);
+            }
+            a {
+                background: rgb(23, 218, 153);
+                border: rgb(23, 218, 153);
+            }
+            hr {
+                background: rgb(81, 255, 154);
+            }
+        }
+    }
+}

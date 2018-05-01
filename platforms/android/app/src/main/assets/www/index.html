@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src *  'unsafe-inline'; script-src *  'unsafe-inline'; media-src *"> -->
+    <title>Geo Location</title>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+        
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+        
+        #map-canvas {
+            height: 100%
+        }
+    </style>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCczxujgk64m9RGYdy2_9mIJ2LScOGpdaE&libraries=geometry" async defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js">
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4&libraries=geometry" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+
+</head>
+
+<body>
+
+    <div class="location-container">
+        <form id="location-form">
+            <a class="btn btn-primary"><i class="fas fa-bars"></i></a>
+            <input type="text" id="location-input" class="form-control" placeholder="Where are you going?">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <div id="map-canvas"></div>
+    <div class="panel">
+        <p></p>></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script>
+    // window.location = "login.html";
+
+    if (!localStorage.getItem('email')) {
+        window.location = "login.html";
+    }
+</script>
+<script type="text/javascript" src="js/gmap.js"></script>
+
+</html>

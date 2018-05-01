@@ -1,0 +1,203 @@
+.login-background .login-content, .register-background .register-content, .location-container form a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+/* START: Snackbar */
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px; }
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0; }
+
+  to {
+    bottom: 30px;
+    opacity: 1; } }
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0; }
+
+  to {
+    bottom: 30px;
+    opacity: 1; } }
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1; }
+
+  to {
+    bottom: 0;
+    opacity: 0; } }
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1; }
+
+  to {
+    bottom: 0;
+    opacity: 0; } }
+
+/* END: Snackbar */
+.login-background {
+  background: url("../img/life.jpg");
+  background-position: -500px 0px;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh; }
+  .login-background .login-content {
+    width: 100%;
+    height: 100%;
+    background: rgba(49, 48, 48, 0.712); }
+    .login-background .login-content img {
+      width: 60%; }
+    .login-background .login-content form {
+      width: 60%; }
+      .login-background .login-content form input {
+        border: none;
+        background: rgba(0, 0, 0, 0);
+        border-bottom: 1px solid white;
+        border-radius: 0px;
+        margin-bottom: 30px;
+        color: white;
+        text-align: center; }
+      .login-background .login-content form input:hover {
+        border-bottom: 1px solid #0084ff; }
+      .login-background .login-content form ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #fcf9f9;
+        opacity: 1;
+        text-align: center;
+        /* Firefox */ }
+      .login-background .login-content form .buttons {
+        width: 100%;
+        margin-top: 50px; }
+        .login-background .login-content form .buttons button,
+        .login-background .login-content form .buttons a {
+          width: 50%;
+          float: left;
+          padding: 2% 1%;
+          text-align: center; }
+        .login-background .login-content form .buttons button {
+          background: rgba(0, 0, 0, 0);
+          border: 2px solid white;
+          color: white;
+          border-radius: 20px; }
+        .login-background .login-content form .buttons button:hover {
+          color: #fcf9f9;
+          border: 2px solid #fcf9f9; }
+        .login-background .login-content form .buttons a {
+          color: white; }
+
+.register-background {
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/life.jpg");
+  background-size: cover; }
+  .register-background .register-content {
+    width: 100%;
+    height: 100%;
+    background: rgba(68, 68, 68, 0.63); }
+    .register-background .register-content h1 {
+      color: white;
+      font-size: 8vw;
+      margin-bottom: 15px; }
+    .register-background .register-content form {
+      width: 80%; }
+      .register-background .register-content form input {
+        margin-bottom: 20px; }
+      .register-background .register-content form button,
+      .register-background .register-content form a {
+        margin-top: 20px;
+        width: 100%; }
+      .register-background .register-content form button {
+        background: #008cff;
+        border: #008cff; }
+      .register-background .register-content form a {
+        background: #17da99;
+        border: #17da99; }
+      .register-background .register-content form hr {
+        background: #51ff9a; }
+
+.panel {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 200px;
+  background: #333;
+  z-index: 1;
+  display: none;
+  transition: 1.5s; }
+  .panel p {
+    color: white; }
+
+.location-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: white;
+  width: 100%;
+  height: 70px; }
+  .location-container form {
+    width: 100%; }
+    .location-container form a {
+      width: 10%;
+      float: left;
+      height: 100%;
+      text-align: center;
+      border-radius: 0px;
+      background: #333;
+      border: none; }
+      .location-container form a i {
+        color: white;
+        font-size: 30px; }
+    .location-container form input {
+      width: 60%;
+      float: left;
+      height: 100%;
+      font-size: 20px;
+      border-radius: 0px;
+      border: none; }
+    .location-container form button {
+      margin: 0;
+      width: 30%;
+      float: left;
+      height: 100%;
+      font-size: 20px;
+      border: none;
+      border-radius: 0px;
+      background: #268ef0; }
+
+#map-canvas {
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; }
