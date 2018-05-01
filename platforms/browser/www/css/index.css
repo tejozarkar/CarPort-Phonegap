@@ -1,4 +1,4 @@
-.login-background .login-content, .register-background .register-content, .location-container form a {
+.login-background .login-content, .register-background .register-content, .admin-dash, .admin-dash .admin-head, .admin-dash a, .location-container form a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,8 @@
   z-index: 1;
   left: 50%;
   bottom: 30px;
-  font-size: 17px; }
+  font-size: 17px;
+  z-index: 2; }
 
 #snackbar.show {
   visibility: visible;
@@ -146,6 +147,79 @@
       .register-background .register-content form hr {
         background: #51ff9a; }
 
+.admin-dash {
+  width: 100vw;
+  height: 100vh;
+  position: relative; }
+  .admin-dash .admin-head {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #333; }
+    .admin-dash .admin-head h1 {
+      margin-top: 5px;
+      font-size: 20px;
+      color: white; }
+  .admin-dash a {
+    margin-top: 30px;
+    height: 100px;
+    text-decoration: none;
+    width: 60%;
+    background: #0994f1;
+    border: none;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .admin-dash a:hover {
+    text-decoration: none; }
+
+.marker-inputs {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100vw; }
+  .marker-inputs input {
+    border-radius: 0; }
+  .marker-inputs button {
+    width: 100%;
+    border-radius: 0; }
+  .marker-inputs #form-available {
+    width: 50%;
+    float: left; }
+  .marker-inputs #form-total {
+    width: 50%;
+    float: left; }
+
+.location-container-admin {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: white;
+  width: 100%;
+  height: 50px; }
+  .location-container-admin form {
+    width: 100%;
+    height: 100%; }
+    .location-container-admin form input {
+      width: 80%;
+      float: left;
+      height: 100%;
+      border-radius: 0px;
+      border: none; }
+    .location-container-admin form button {
+      margin: 0;
+      width: 20%;
+      float: left;
+      height: 100%;
+      border: none;
+      border-radius: 0px;
+      background: #b85b03; }
+    .location-container-admin form button:hover {
+      background: #773b02; }
+
 .panel {
   position: fixed;
   left: 0;
@@ -166,11 +240,11 @@
   z-index: 1;
   background: white;
   width: 100%;
-  height: 70px; }
+  height: 50px; }
   .location-container form {
     width: 100%; }
     .location-container form a {
-      width: 10%;
+      width: 20%;
       float: left;
       height: 100%;
       text-align: center;
@@ -189,7 +263,7 @@
       border: none; }
     .location-container form button {
       margin: 0;
-      width: 30%;
+      width: 20%;
       float: left;
       height: 100%;
       font-size: 20px;

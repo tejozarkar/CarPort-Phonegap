@@ -2,7 +2,9 @@
 @import 'global';
 @import 'login';
 @import 'register';
-@import 'index';
+@import 'admin';
+@import 'add-marker';
+@import 'main';
 #map-canvas {
     width: 100vw;
     height: 100vh;

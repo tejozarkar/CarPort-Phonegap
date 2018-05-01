@@ -18,19 +18,20 @@
 
 <body>
 
-    <form id="marker-form">
-        <input id="form-name" class="form-control" placeholder="Enter Name">
-        <input id="form-available" class="form-control" placeholder="Enter Available Spaces">
-        <input id="form-total" class="form-control" placeholder="Enter Total Spaces">
-        <button type="submit" class="btn btn-success">Add</button>
-    </form>
+    <div class="admin-dash">
+        <div class="admin-head">
+            <h1>Dashboard</h1>
+        </div>
 
-    <div id="map-canvas"></div>
+        <a href="add-marker.html">Add Marker</a>
+        <a href="#" style="background: rgb(211, 58, 58)">View Markers</a>
+        <a href="#" style="background: rgb(37, 172, 66)">View Bookings</a>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="cordova.js"></script>
-    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/admin.js"></script>
 
 </body>
