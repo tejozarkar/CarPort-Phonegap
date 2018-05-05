@@ -5,13 +5,13 @@ loginForm.addEventListener('submit', register);
 function register(e) {
     e.preventDefault();
 
-    var email = document.getElementById('form-email').value;
+    var email = (document.getElementById('form-email').value).trim();
     var password = document.getElementById('form-password').value;
 
     if (email == "" || password == "") {
         snackbar('Please enter email & password');
     } else if (email == "admin" && password == "admin") {
-        localStorage.setItem('email', 'admin');
+        localStorage.setItem('id', 0);
         window.location = "admin.html";
     } else {
         $.ajax({

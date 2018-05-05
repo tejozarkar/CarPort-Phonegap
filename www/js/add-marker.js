@@ -55,7 +55,7 @@ function addMarker(latLng) {
     marker = new google.maps.Marker({
         position: latLng,
         map: map,
-        icon: markerIcon,
+        icon: 'parking2.png',
         draggable: true
     });
 
@@ -98,6 +98,9 @@ function geocode(e) {
         });
 }
 
+
+
+
 var markerForm = document.getElementById('marker-form');
 
 markerForm.addEventListener('submit', addMarkerToDB);
@@ -121,7 +124,8 @@ function addMarkerToDB(e) {
                 totalSpots: totalSpots.value,
                 lat: lat,
                 lng: lng,
-                cost: cost.value
+                cost: cost.value,
+
             }
         }).done(function(response) {
             console.log(response);
@@ -158,4 +162,13 @@ $('#menu-add-marker').click(function(e) {
     e.preventDefault();
     localStorage.clear();
     window.location = "add-marker.html";
+});
+
+$('#menu-bookings').click(function(e) {
+    e.preventDefault();
+    window.location = "view-bookings.html";
+});
+$('#menu-view-markers').click(function(e) {
+    e.preventDefault();
+    window.location = "view-markers.html";
 });

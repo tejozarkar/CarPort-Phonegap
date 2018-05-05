@@ -10,6 +10,7 @@
     button {
         width: 100%;
         border-radius: 0;
+        background: rgb(8, 184, 116);
     }
     #form-total {
         width: 50%;
@@ -41,16 +42,18 @@
             font-size: 20px;
         }
         input {
-            width: 60%;
+            width: 50%;
             float: left;
             height: 100%;
+            font-size: 4vw;
             border-radius: 0px;
             border: none;
         }
         button {
             margin: 0;
-            width: 20%;
+            width: 30%;
             float: left;
+            font-size: 4vw;
             height: 100%;
             border: none;
             border-radius: 0px;

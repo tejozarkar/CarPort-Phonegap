@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCczxujgk64m9RGYdy2_9mIJ2LScOGpdaE&libraries=geometry" async defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4&libraries=geometry" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>CarPort</title>
+</head>
+
+<body>
+
+
+    <div class="admin-head">
+        <a id="btn-menu" class="btn"><i class="fas fa-bars"></i></a>
+        <h1>Dashboard</h1>
+    </div>
+
+    <div class="menu">
+        <img src="./img/logocolor.png">
+        <a href="#" id="menu-dashboard">Dashboard</a>
+        <a href="#" id="menu-add-marker">Add Locations</a>
+        <a href="#" id="menu-view-markers">View Locations</a>
+        <a href="#" id="menu-bookings">Bookings</a>
+        <a href="#" id="menu-logout">Logout</a>
+    </div>
+
+    <div class="markers-main">
+        <div id="markers">
+
+        </div>
+    </div>
+
+    <div id="snackbar">Some text some message..</div>
+    <script type="text/javascript">
+        function snackbar(msg) {
+            var x = document.getElementById("snackbar");
+            x.innerHTML = msg;
+            x.className = "show";
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 3000);
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="./js/view-markers.js"></script>
+
+    <script>
+        $('#logout').click(function(e) {
+            e.preventDefault();
+            localStorage.clear();
+            window.location = "login.html";
+        });
+        $('#btn-menu').click(function(e) {
+            e.preventDefault();
+            $(".menu").toggleClass('hide show');
+        });
+        $('#menu-logout').click(function(e) {
+            e.preventDefault();
+            localStorage.clear();
+            window.location = "login.html";
+        });
+        $('#menu-dashboard').click(function(e) {
+            e.preventDefault();
+            window.location = "admin.html";
+        });
+        $('#menu-add-marker').click(function(e) {
+            e.preventDefault();
+            localStorage.clear();
+            window.location = "add-marker.html";
+        });
+        $('#menu-bookings').click(function(e) {
+            e.preventDefault();
+            window.location = "view-bookings.html";
+        });
+        $('#menu-view-markers').click(function(e) {
+            e.preventDefault();
+            window.location = "view-markers.html";
+        });
+    </script>
+</body>
+
+</html>

@@ -37,6 +37,7 @@
 
 <body>
     <div class="menu">
+        <img src="./img/logocolor.png">
         <a href="#" id="menu-find-parking">Find Parking</a>
         <a href="#" id="menu-your-bookings">Your Bookings</a>
         <a href="#" id="menu-logout">Logout</a>
@@ -68,7 +69,7 @@
         <p id="available-spaces"> Available Space: </p>
         <p id="cost">Cost Per Hour: </p>
         <p id="cost-per-hour"></p>
-        <button id="btn_book" class="btn btn-success">Book</button>
+        <button id="btn_book" class="btn">Book</button>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -78,7 +79,7 @@
 
     if (!localStorage.getItem('id')) {
         window.location = "login.html";
-    } else if (localStorage.getItem('email') == 'admin') {
+    } else if (localStorage.getItem('id') == 0) {
         window.location = "admin.html";
     }
     $('#btn-menu').click(function(e) {
@@ -98,6 +99,10 @@
         e.preventDefault();
         localStorage.clear();
         window.location = "login.html";
+    });
+    $('#menu-your-bookings').click(function(e) {
+        e.preventDefault();
+        window.location = "user-bookings.html";
     });
 </script>
 <script type="text/javascript" src="js/gmap.js"></script>

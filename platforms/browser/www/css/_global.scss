@@ -1,112 +1,144 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-
-/* START: Snackbar */
-
-#snackbar {
-    visibility: hidden;
-    min-width: 250px;
-    margin-left: -125px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    bottom: 30px;
-    font-size: 17px;
-    z-index: 2;
-}
-
-#snackbar.show {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-    to {
-        bottom: 30px;
-        opacity: 1;
-    }
-}
-
-@keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-    to {
-        bottom: 30px;
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes fadeout {
-    from {
-        bottom: 30px;
-        opacity: 1;
-    }
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
-}
-
-@keyframes fadeout {
-    from {
-        bottom: 30px;
-        opacity: 1;
-    }
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
-}
-
-.menu {
-    width: 60vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    @extend %flex-box;
-    width: 0;
-    overflow: hidden;
-    background: #333;
-    transition: width .35s ease-in-out;
-    a {
+    * {
         margin: 0;
-        color: white;
-        margin-bottom: 1px;
+        padding: 0;
+    }
+    /* START: Snackbar */
+    
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+        z-index: 2;
+    }
+    
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    
+    @-webkit-keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+    
+    .admin-head {
         width: 100%;
-        height: 40px;
-        background: rgb(73, 73, 73);
+        height: 50px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgb(255, 255, 255);
+        border-bottom: 2px solid rgb(8, 184, 116);
+        z-index: 2;
+        a {
+            @extend %flex-box;
+            height: 100%;
+            width: 20%;
+            float: left;
+            border: none;
+            border-radius: 0px;
+            // background: rgb(66, 66, 66);
+            color: white;
+        }
+        h1 {
+            // height: 100%;
+            margin-top: 10px;
+            font-size: 20px;
+            color: rgb(80, 79, 79);
+            width: 60%;
+            float: right;
+        }
+    }
+    
+    .menu {
+        width: 60vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
         @extend %flex-box;
+        width: 0;
+        overflow: hidden;
+        background: rgb(255, 255, 255);
+        transition: width .35s ease-in-out;
+        img {
+            margin-top: -50px;
+            width: 100%;
+        }
+        a {
+            margin: 5px 30px;
+            color: #333;
+            // margin-bottom: 1px;
+            width: 80%;
+            height: 40px;
+            background: rgb(255, 255, 255);
+            // background: rgb(8, 184, 116);
+            border: 2px solid rgb(8, 184, 116);
+            @extend %flex-box;
+        }
+        a:hover {
+            background: rgb(8, 184, 116);
+            text-decoration: none;
+            color: white;
+        }
     }
-    a:hover {
-        background: rgb(117, 116, 116);
-        text-decoration: none;
+    
+    .hide {
+        width: 0vw;
     }
-}
-
-.hide {
-    width: 0vw;
-}
-
-.show {
-    width: 60vw;
-}
-
-
-/* END: Snackbar */
+    
+    .show {
+        width: 60vw;
+    }
+    /* END: Snackbar */

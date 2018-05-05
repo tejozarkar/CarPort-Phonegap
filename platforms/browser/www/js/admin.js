@@ -21,3 +21,11 @@ $('#menu-add-marker').click(function(e) {
     localStorage.clear();
     window.location = "add-marker.html";
 });
+$('#menu-bookings').click(function(e) {
+    e.preventDefault();
+    window.location = "view-bookings.html";
+});
+$('#menu-view-markers').click(function(e) {
+    e.preventDefault();
+    window.location = "view-markers.html";
+});

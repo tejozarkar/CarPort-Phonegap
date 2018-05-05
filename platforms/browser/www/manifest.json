@@ -1,8 +1,8 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "carPort",
-  "short_name": "carPort",
+  "name": "CarPort",
+  "short_name": "CarPort",
   "version": "codehunter.carport.app",
   "description": "Hello World sample application that responds to the deviceready event.",
   "author": "PhoneGap Team",

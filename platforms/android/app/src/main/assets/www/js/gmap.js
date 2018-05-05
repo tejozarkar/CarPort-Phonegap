@@ -1,6 +1,8 @@
-navigator.geolocation.getCurrentPosition(onSuccess, onError, {
-    timeout: 30000
-});
+navigator.geolocation.getCurrentPosition(onSuccess);
+// onError, {
+//     // timeout: 30000,
+//     maximumAge: 3600000,
+//     enableHighAccuracy: true
 
 var google;
 var map;
@@ -8,6 +10,13 @@ var markers;
 
 
 //console.log(markers);
+
+function getTimeStamp() {
+    var now = new Date();
+    return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + ((now.getHours() > 12) ? (now.getHours() - 12) : (now.getHours())) + ':' +
+        ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
+            .getSeconds()) : (now.getSeconds())));
+}
 
 function onSuccess(position) {
     var lat = position.coords.latitude;
@@ -68,7 +77,7 @@ function addMarker(props, i) {
         //     fontWeight: "bold",
         // },
         tag: i,
-        icon: markerIcon
+        icon: 'parking.png'
     });
     marker.set("id", i);
     marker.addListener('click', function() {
@@ -138,14 +147,15 @@ $('#btn_book').click(function(e) {
         data: {
             markerID: markerID,
             userID: userID,
-            cost: cost
+            cost: cost,
+            time: getTimeStamp()
         }
     }).done(function(response) {
         console.log(response);
         if (response != "Success")
             snackbar('Booking Unsuccessful');
         else {
-
+            window.location = "user-bookings.html";
         }
 
     });

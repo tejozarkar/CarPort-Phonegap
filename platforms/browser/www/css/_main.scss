@@ -25,6 +25,7 @@
         border: none;
         border-radius: 0px;
         background: rgb(28, 185, 138);
+        color: white;
     }
     #marker-id {
         display: none;
@@ -59,19 +60,19 @@
             }
         }
         input {
-            width: 60%;
+            width: 50%;
             float: left;
             height: 100%;
-            // font-size: 20px;
+            font-size: 4vw;
             border-radius: 0px;
             border: none;
         }
         button {
             margin: 0;
-            width: 20%;
+            width: 30%;
             float: left;
             height: 100%;
-            // font-size: 20px;
+            font-size: 4vw;
             border: none;
             border-radius: 0px;
             background: rgb(28, 185, 138);

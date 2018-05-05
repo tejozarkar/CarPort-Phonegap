@@ -1,0 +1,59 @@
+.markers-main {
+    width: 100%;
+    @extend %flex-box;
+    margin-top: 100px;
+}
+
+#markers {
+    width: 100%;
+    @extend %flex-box;
+}
+
+.marker-card {
+    margin: 5px;
+    width: 80%;
+    position: relative;
+    @extend %flex-box;
+    //background: rgb(230, 231, 230);
+    box-shadow: 0 4px 8px 0 rgba(80, 79, 79, 0.2), 0 6px 20px 0 rgba(65, 64, 64, 0.19);
+    padding: 10px;
+    padding-bottom: 30px;
+    button {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0px;
+        background: rgb(184, 43, 8);
+        color: white;
+    }
+}
+
+.marker-status {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    @extend %flex-box;
+    display: none;
+    .check {
+        height: 120px;
+        width: 120px;
+        background: rgb(8, 184, 116);
+        @extend %flex-box;
+        border-radius: 100px;
+    }
+    i {
+        font-size: 80px;
+        color: white;
+    }
+    h2 {
+        margin: 20px 0px;
+        color: rgb(8, 184, 116);
+    }
+    button {
+        margin-top: 30px;
+        width: 40%;
+        background: rgb(59, 59, 59);
+        color: white;
+    }
+}
