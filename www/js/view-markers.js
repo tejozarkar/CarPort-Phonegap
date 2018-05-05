@@ -60,16 +60,22 @@ function displayData(marker) {
     button.innerHTML = "DELETE";
 
     button.onclick = function() {
-        $.ajax({
-            type: "GET",
-            url: "http://carport.xrobotics.io/deleteMarker.php",
-            data: {
-                id: marker['id']
-            }
-        }).done(function(response) {
-            console.log(response);
-            window.location.reload();
-        });
+        var r = confirm("Do you really want to delete?");
+        if (r == true) {
+            $.ajax({
+                type: "GET",
+                url: "http://carport.xrobotics.io/deleteMarker.php",
+                data: {
+                    id: marker['id']
+                }
+            }).done(function(response) {
+                console.log(response);
+                window.location.reload();
+            });
+        } else {
+
+        }
+
     };
 
     append(markerCard, location);

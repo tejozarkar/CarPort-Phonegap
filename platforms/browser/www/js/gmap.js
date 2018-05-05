@@ -140,23 +140,25 @@ $('#btn_book').click(function(e) {
     var markerID = document.getElementById('marker-id').innerHTML;
     var userID = localStorage.getItem('id');
     var cost = document.getElementById('cost-per-hour').innerHTML;
+    var r = confirm("Do you really want to book?");
+    if (r == true) {
+        $.ajax({
+            type: "POST",
+            url: "http://carport.xrobotics.io/book.php",
+            data: {
+                markerID: markerID,
+                userID: userID,
+                cost: cost,
+                time: getTimeStamp()
+            }
+        }).done(function(response) {
+            console.log(response);
+            if (response != "Success")
+                snackbar('Booking Unsuccessful');
+            else {
+                window.location = "user-bookings.html";
+            }
 
-    $.ajax({
-        type: "POST",
-        url: "http://carport.xrobotics.io/book.php",
-        data: {
-            markerID: markerID,
-            userID: userID,
-            cost: cost,
-            time: getTimeStamp()
-        }
-    }).done(function(response) {
-        console.log(response);
-        if (response != "Success")
-            snackbar('Booking Unsuccessful');
-        else {
-            window.location = "user-bookings.html";
-        }
-
-    });
+        });
+    }
 });

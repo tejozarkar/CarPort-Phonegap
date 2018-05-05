@@ -76,20 +76,24 @@ function displayData(booking) {
     button.innerHTML = "Complete & Pay";
 
     button.onclick = function() {
-        $.ajax({
-            type: "POST",
-            url: "http://carport.xrobotics.io/pay.php",
-            data: {
-                id: booking['id'],
-                cost: curCost,
-                marker_id: booking['marker_id']
-            }
-        }).done(function(response) {
-            console.log(response);
-            $('.booking-status').css("display", "flex");
-            $('.booking-status').show();
-            $('#paid').append(curCost);
-        });
+        var r = confirm("Do you want to complete?");
+        if (r == true) {
+            $.ajax({
+                type: "POST",
+                url: "http://carport.xrobotics.io/pay.php",
+                data: {
+                    id: booking['id'],
+                    cost: curCost,
+                    marker_id: booking['marker_id']
+                }
+            }).done(function(response) {
+                console.log(response);
+                $('.booking-status').css("display", "flex");
+                $('.booking-status').show();
+                $('#paid').append(curCost);
+            });
+        }
+
     };
 
     append(bookingCard, location);
