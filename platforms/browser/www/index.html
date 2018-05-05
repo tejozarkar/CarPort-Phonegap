@@ -36,25 +36,69 @@
 </head>
 
 <body>
+    <div class="menu">
+        <a href="#" id="menu-find-parking">Find Parking</a>
+        <a href="#" id="menu-your-bookings">Your Bookings</a>
+        <a href="#" id="menu-logout">Logout</a>
+    </div>
+
+    <div id="snackbar">Some text some message..</div>
+    <script type="text/javascript">
+        function snackbar(msg) {
+            var x = document.getElementById("snackbar");
+            x.innerHTML = msg;
+            x.className = "show";
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 3000);
+        }
+    </script>
 
     <div class="location-container">
         <form id="location-form">
-            <a class="btn btn-primary"><i class="fas fa-bars"></i></a>
+            <a id="btn-menu" class="btn"><i class="fas fa-bars"></i></a>
             <input type="text" id="location-input" class="form-control" placeholder="Where are you going?">
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
     </div>
     <div id="map-canvas"></div>
     <div class="panel">
-        <p></p>></div>
+        <p id="marker-id"></p>
+        <h1 id="location-name">Location Name: </h1>
+        <p id="available-spaces"> Available Space: </p>
+        <p id="cost">Cost Per Hour: </p>
+        <p id="cost-per-hour"></p>
+        <button id="btn_book" class="btn btn-success">Book</button>
+    </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script>
     // window.location = "login.html";
 
-    if (!localStorage.getItem('email')) {
+
+    if (!localStorage.getItem('id')) {
         window.location = "login.html";
+    } else if (localStorage.getItem('email') == 'admin') {
+        window.location = "admin.html";
     }
+    $('#btn-menu').click(function(e) {
+        e.preventDefault();
+        $(".menu").toggleClass('hide show');
+
+    });
+    $('#map-canvas').click(function(e) {
+        e.preventDefault();
+        $(".menu").removeClass('show');
+    });
+    $('#menu-find-parking').click(function(e) {
+        e.preventDefault();
+        window.location = "index.html";
+    });
+    $('#menu-logout').click(function(e) {
+        e.preventDefault();
+        localStorage.clear();
+        window.location = "login.html";
+    });
 </script>
 <script type="text/javascript" src="js/gmap.js"></script>
 

@@ -11,11 +11,11 @@
         width: 100%;
         border-radius: 0;
     }
-    #form-available {
+    #form-total {
         width: 50%;
         float: left;
     }
-    #form-total {
+    #form-cost {
         width: 50%;
         float: left;
     }
@@ -32,8 +32,16 @@
     form {
         width: 100%;
         height: 100%;
+        a {
+            width: 20%;
+            height: 100%;
+            float: left;
+            color: #333;
+            @extend %flex-box;
+            font-size: 20px;
+        }
         input {
-            width: 80%;
+            width: 60%;
             float: left;
             height: 100%;
             border-radius: 0px;
@@ -46,10 +54,10 @@
             height: 100%;
             border: none;
             border-radius: 0px;
-            background: rgb(184, 91, 3);
+            background: rgb(8, 184, 116);
         }
         button:hover {
-            background: rgb(119, 59, 2);
+            background: rgb(2, 126, 78);
         }
     }
 }

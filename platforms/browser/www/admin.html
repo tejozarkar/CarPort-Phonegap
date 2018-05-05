@@ -11,6 +11,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCczxujgk64m9RGYdy2_9mIJ2LScOGpdaE&libraries=geometry" async defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js">
     </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4&libraries=geometry" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>CarPort</title>
@@ -18,14 +20,23 @@
 
 <body>
 
+    <div class="menu">
+        <a href="#" id="menu-dashboard">Dashboard</a>
+        <a href="#" id="menu-add-marker">Add Marker</a>
+        <a href="#" id="menu-view-marker">View Marker</a>
+        <a href="#" id="menu-bookings">Bookings</a>
+        <a href="#" id="menu-logout">Logout</a>
+    </div>
     <div class="admin-dash">
         <div class="admin-head">
+            <a id="btn-menu" class="btn"><i class="fas fa-bars"></i></a>
             <h1>Dashboard</h1>
         </div>
 
-        <a href="add-marker.html">Add Marker</a>
-        <a href="#" style="background: rgb(211, 58, 58)">View Markers</a>
-        <a href="#" style="background: rgb(37, 172, 66)">View Bookings</a>
+        <a class="admin-button" href="add-marker.html">Add Marker</a>
+        <a class="admin-button" href="#" style="background: rgb(211, 58, 58)">View Markers</a>
+        <a class="admin-button" href="#" style="background: rgb(37, 172, 66)">View Bookings</a>
+        <a id="logout" class="admin-button" href="#" style="background: rgb(48, 48, 48); height: 50px;">Logout</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>

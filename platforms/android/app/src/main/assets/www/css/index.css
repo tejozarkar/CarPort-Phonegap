@@ -1,4 +1,4 @@
-.login-background .login-content, .register-background .register-content, .admin-dash, .admin-dash .admin-head, .admin-dash a, .location-container form a {
+.menu, .menu a, .login-background .login-content, .register-background .register-content, .admin-dash, .admin-dash .admin-head a, .admin-dash .admin-button, .location-container-admin form a, .panel, .location-container form a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,6 +65,34 @@
   to {
     bottom: 0;
     opacity: 0; } }
+
+.menu {
+  width: 60vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 0;
+  overflow: hidden;
+  background: #333;
+  transition: width .35s ease-in-out; }
+  .menu a {
+    margin: 0;
+    color: white;
+    margin-bottom: 1px;
+    width: 100%;
+    height: 40px;
+    background: #494949; }
+  .menu a:hover {
+    background: #757474;
+    text-decoration: none; }
+
+.hide {
+  width: 0vw; }
+
+.show {
+  width: 60vw; }
 
 /* END: Snackbar */
 .login-background {
@@ -150,20 +178,31 @@
 .admin-dash {
   width: 100vw;
   height: 100vh;
-  position: relative; }
+  position: relative;
+  background: #f0efef; }
   .admin-dash .admin-head {
     width: 100%;
     height: 50px;
     position: absolute;
     top: 0;
     left: 0;
-    background: #333; }
-    .admin-dash .admin-head h1 {
-      margin-top: 5px;
-      font-size: 20px;
+    background: #5e5d5d;
+    z-index: 2; }
+    .admin-dash .admin-head a {
+      height: 100%;
+      width: 20%;
+      float: left;
+      border: none;
+      border-radius: 0px;
       color: white; }
-  .admin-dash a {
-    margin-top: 30px;
+    .admin-dash .admin-head h1 {
+      margin-top: 10px;
+      font-size: 20px;
+      color: white;
+      width: 60%;
+      float: right; }
+  .admin-dash .admin-button {
+    margin-top: 10px;
     height: 100px;
     text-decoration: none;
     width: 60%;
@@ -171,7 +210,7 @@
     border: none;
     color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-  .admin-dash a:hover {
+  .admin-dash .admin-button:hover {
     text-decoration: none; }
 
 .marker-inputs {
@@ -185,10 +224,10 @@
   .marker-inputs button {
     width: 100%;
     border-radius: 0; }
-  .marker-inputs #form-available {
+  .marker-inputs #form-total {
     width: 50%;
     float: left; }
-  .marker-inputs #form-total {
+  .marker-inputs #form-cost {
     width: 50%;
     float: left; }
 
@@ -203,8 +242,14 @@
   .location-container-admin form {
     width: 100%;
     height: 100%; }
+    .location-container-admin form a {
+      width: 20%;
+      height: 100%;
+      float: left;
+      color: #333;
+      font-size: 20px; }
     .location-container-admin form input {
-      width: 80%;
+      width: 60%;
       float: left;
       height: 100%;
       border-radius: 0px;
@@ -216,9 +261,9 @@
       height: 100%;
       border: none;
       border-radius: 0px;
-      background: #b85b03; }
+      background: #08b874; }
     .location-container-admin form button:hover {
-      background: #773b02; }
+      background: #027e4e; }
 
 .panel {
   position: fixed;
@@ -226,12 +271,28 @@
   bottom: 0;
   width: 100vw;
   height: 200px;
-  background: #333;
+  background: white;
   z-index: 1;
-  display: none;
-  transition: 1.5s; }
-  .panel p {
-    color: white; }
+  height: 0;
+  overflow: hidden;
+  transition: height .35s ease-in-out; }
+  .panel h1 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 20px; }
+  .panel button {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+    border-radius: 0px;
+    background: #1cb98a; }
+  .panel #marker-id {
+    display: none; }
+  .panel #cost-per-hour {
+    display: none; }
 
 .location-container {
   position: fixed;
@@ -249,16 +310,15 @@
       height: 100%;
       text-align: center;
       border-radius: 0px;
-      background: #333;
+      background: white;
       border: none; }
       .location-container form a i {
-        color: white;
-        font-size: 30px; }
+        color: #636161;
+        font-size: 20px; }
     .location-container form input {
       width: 60%;
       float: left;
       height: 100%;
-      font-size: 20px;
       border-radius: 0px;
       border: none; }
     .location-container form button {
@@ -266,12 +326,11 @@
       width: 20%;
       float: left;
       height: 100%;
-      font-size: 20px;
       border: none;
       border-radius: 0px;
-      background: #b85b03; }
+      background: #1cb98a; }
     .location-container form button:hover {
-      background: #773b02; }
+      background: #095f45; }
 
 #map-canvas {
   width: 100vw;

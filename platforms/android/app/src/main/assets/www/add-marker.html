@@ -11,12 +11,20 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCczxujgk64m9RGYdy2_9mIJ2LScOGpdaE&libraries=geometry" async defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js">
     </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4&libraries=geometry" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>CarPort</title>
 </head>
 
 <body>
+    <div class="menu">
+        <a href="#" id="menu-dashboard">Dashboard</a>
+        <a href="#" id="menu-add-marker">Add Marker</a>
+        <a href="#" id="menu-bookings">Bookings</a>
+        <a href="#" id="menu-logout">Logout</a>
+    </div>
 
     <div id="snackbar">Some text some message..</div>
     <script type="text/javascript">
@@ -31,7 +39,8 @@
     </script>
     <div class="location-container-admin">
         <form id="location-form">
-            <input type="text" id="location-input" class="form-control" placeholder="Enter location ">
+            <a id="btn-menu" class="btn"><i class="fas fa-bars"></i></a>
+            <input type="text" id="location-input" class="form-control" placeholder="Where are you going?">
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
     </div>
@@ -39,7 +48,6 @@
         <form id="marker-form">
             <input id="form-name" class="form-control" placeholder="Enter Location Name">
             <input id="form-total" class="form-control" placeholder="Total Spaces">
-            <input id="form-available" class="form-control" placeholder="Available Spaces">
             <input id="form-cost" class="form-control" placeholder="Cost per hour">
             <button type="submit" class="btn btn-success">Add</button>
         </form>

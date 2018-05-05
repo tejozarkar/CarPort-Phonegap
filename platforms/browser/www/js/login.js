@@ -11,6 +11,7 @@ function register(e) {
     if (email == "" || password == "") {
         snackbar('Please enter email & password');
     } else if (email == "admin" && password == "admin") {
+        localStorage.setItem('email', 'admin');
         window.location = "admin.html";
     } else {
         $.ajax({
@@ -22,8 +23,11 @@ function register(e) {
             }
         }).done(function(response) {
             console.log(response);
-            if (response == 'success') {
-                localStorage.setItem('email', 'set');
+            var res = response.split(" ");
+            console.log(res[0]);
+            if (res[0] == 'success') {
+
+                localStorage.setItem('id', res[1]);
                 window.location = "index.html";
             } else {
                 snackbar('Invalid credentials');

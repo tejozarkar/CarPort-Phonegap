@@ -42,7 +42,7 @@ function onSuccess(position) {
         });
 
     google.maps.event.addListener(map, 'click', function(event) {
-        $('.panel').hide();
+        $('.panel').css({ height: '0' });
     });
 
 }
@@ -72,10 +72,13 @@ function addMarker(props, i) {
     });
     marker.set("id", i);
     marker.addListener('click', function() {
-        $('.panel').show();
-        var index = marker.tag;
-        console.log(markers[index]);
-        $('.panel p').html(markers[i].name);
+        $('.panel').css({ height: '200px' });
+        $('#location-name').html("Location Name: " + markers[i].name);
+        $('#available-spaces').html("Available Spaces: " + markers[i].available_spaces + "/" + markers[i].total_spaces);
+        $('#marker-id').html(markers[i].id);
+
+        $('#cost').html("Cost per hour: £" + markers[i].cost + "");
+        $('#cost-per-hour').html(markers[i].cost);
         map.setZoom(16);
         console.log(marker.id);
         map.setCenter(marker.getPosition());
@@ -122,3 +125,28 @@ function geocode(e) {
             console.log(error);
         });
 }
+
+$('#btn_book').click(function(e) {
+    e.preventDefault();
+    var markerID = document.getElementById('marker-id').innerHTML;
+    var userID = localStorage.getItem('id');
+    var cost = document.getElementById('cost-per-hour').innerHTML;
+
+    $.ajax({
+        type: "POST",
+        url: "http://carport.xrobotics.io/book.php",
+        data: {
+            markerID: markerID,
+            userID: userID,
+            cost: cost
+        }
+    }).done(function(response) {
+        console.log(response);
+        if (response != "Success")
+            snackbar('Booking Unsuccessful');
+        else {
+
+        }
+
+    });
+});

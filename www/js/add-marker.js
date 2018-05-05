@@ -105,20 +105,19 @@ markerForm.addEventListener('submit', addMarkerToDB);
 function addMarkerToDB(e) {
     e.preventDefault();
     var locationName = document.getElementById('form-name');
-    var availableSpots = document.getElementById('form-available');
+
     var totalSpots = document.getElementById('form-total');
     var cost = document.getElementById('form-cost');
     if (lat == 0 && lng == 0) {
         snackbar('Please add marker on map');
-    } else if (availableSpots.value > totalSpots.value) {
-        snackbar('Available Spots should be less than total spots');
+    } else if (totalSpots.value == "" || locationName.vaue == "" || cost.value == "") {
+        snackbar('Provide required details');
     } else {
         $.ajax({
             type: "POST",
             url: "http://carport.xrobotics.io/addMarker.php",
             data: {
                 locationName: locationName.value,
-                availableSpots: availableSpots.value,
                 totalSpots: totalSpots.value,
                 lat: lat,
                 lng: lng,
@@ -129,7 +128,6 @@ function addMarkerToDB(e) {
             snackbar('Marker successfully added');
             marker.setMap(null);
             locationName.value = "";
-            availableSpots.value = "";
             totalSpots.value = "";
             cost.value = "";
             // window.location = "login.html";
@@ -138,3 +136,26 @@ function addMarkerToDB(e) {
 
 
 }
+
+$('#btn-menu').click(function(e) {
+    e.preventDefault();
+    $(".menu").toggleClass('hide show');
+});
+$('#map-canvas').click(function(e) {
+    e.preventDefault();
+    $(".menu").removeClass('show');
+});
+$('#menu-logout').click(function(e) {
+    e.preventDefault();
+    localStorage.clear();
+    window.location = "login.html";
+});
+$('#menu-dashboard').click(function(e) {
+    e.preventDefault();
+    window.location = "admin.html";
+});
+$('#menu-add-marker').click(function(e) {
+    e.preventDefault();
+    localStorage.clear();
+    window.location = "add-marker.html";
+});

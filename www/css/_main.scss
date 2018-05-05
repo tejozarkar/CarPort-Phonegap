@@ -1,0 +1,83 @@
+.panel {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 200px;
+    background: white;
+    @extend %flex-box;
+    z-index: 1;
+    height: 0;
+    overflow: hidden;
+    transition: height .35s ease-in-out;
+    h1 {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    button {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        left: 0;
+        width: 100%;
+        // font-size: 20px;
+        border: none;
+        border-radius: 0px;
+        background: rgb(28, 185, 138);
+    }
+    #marker-id {
+        display: none;
+    }
+    #cost-per-hour {
+        display: none;
+    }
+}
+
+.location-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: white;
+    width: 100%;
+    height: 50px;
+    form {
+        width: 100%;
+        a {
+            width: 20%;
+            float: left;
+            height: 100%;
+            text-align: center;
+            border-radius: 0px;
+            background: rgb(255, 255, 255);
+            border: none;
+            @extend %flex-box;
+            i {
+                color: rgb(99, 97, 97);
+                font-size: 20px;
+            }
+        }
+        input {
+            width: 60%;
+            float: left;
+            height: 100%;
+            // font-size: 20px;
+            border-radius: 0px;
+            border: none;
+        }
+        button {
+            margin: 0;
+            width: 20%;
+            float: left;
+            height: 100%;
+            // font-size: 20px;
+            border: none;
+            border-radius: 0px;
+            background: rgb(28, 185, 138);
+        }
+        button:hover {
+            background: rgb(9, 95, 69);
+        }
+    }
+}
