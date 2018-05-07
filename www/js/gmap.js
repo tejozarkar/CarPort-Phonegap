@@ -30,6 +30,26 @@ function onSuccess(position) {
     }
     map = new this.google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+    var markerIcon = {
+        url: 'placeholder.png',
+        scaledSize: new this.google.maps.Size(45, 50),
+        origin: new this.google.maps.Point(0, 0),
+        anchor: new this.google.maps.Point(32, 65),
+        labelOrigin: new this.google.maps.Point(20, -10)
+    };
+
+    var marker = new google.maps.Marker({
+        position: { lat: lat, lng: lng },
+        map: map,
+        label: {
+            text: "You're here",
+            color: "#333",
+            fontSize: "16px",
+            fontWeight: "bold",
+        },
+        icon: markerIcon
+    });
+
 
     axios.get('http://carport.xrobotics.io/getMarkers.php')
         .then(function(response) {
